@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
         </div>
         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
             <div class="card-info">
-                <div class="missing mt-5 bg-danger-subtle">
+                <div class="missing mt-5 bg-danger">
                     <p>Some fields are missing</p>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -42,57 +43,76 @@
             </div>
             <div class="fl-name d-flex justify-content-between">
                 <div class="f-name">
-                    <div class="mb-3">
-                        <label class="form-label" for="firstName">First Name</label>
-                        <input class="form-control" size=50 id="firstName" type="text" placeholder="" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="firstName:required">First Name is required.</div>
-                    </div>
+                    <fieldset class="mb-3" style="border:1px solid #999; padding:6px;">
+                        <div class="mb-3">
+                            <label class="form-label" for="firstName">First Name</label>
+                            <input class="form-control" size=50 id="firstName" type="text" placeholder="" data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="firstName:required">First Name is required.</div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="mb-3" style="border:1px solid #999; padding:6px;">
                     <div class="mb-3">
                         <label class="form-label" for="City">City</label>
                         <input class="form-control" size=60 id="lastName" type="text" placeholder="" data-sb-validations="required" />
                         <div class="invalid-feedback" data-sb-feedback="lastName:required">Last Name is required.</div>
                     </div>
+                    </fieldset>
+                    <fieldset class="mb-3" style="border:1px solid #999; padding:6px;">
+                        <div class="credit-type">
+                            <p>We accept:</p>
+                            <form action="/action_page.php">
+                                <div class="bg-secondary">
+                                    <input type="radio" id="html" name="fav_language" value="HTML">
+                                    <i class="fa-brands fa-cc-mastercard"></i>
+                                    <input type="radio" id="css" name="fav_language" value="CSS">
+                                    <i class="fa-brands fa-cc-visa"></i>
+                                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                                    <i class="fa-brands fa-cc-mastercard"></i>
+                                    <input type="radio" id="css" name="fav_language" value="CSS">
+                                    <i class="fa-brands fa-cc-visa"></i>
+                                </div>
+                            </form> 
+                        </div>
+                    </fieldset>
                 </div> 
                 <div class="l-name">
-                    <div class="mb-3">
-                        <label class="form-label" for="city">Last Name</label>
-                        <input class="form-control" size=60 id="city" type="text" placeholder="" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="city:required">City is required.</div>
-                    </div>
-                    <div class="address d-flex justify-content-between">
+                    <fieldset class="mb-3" style="border:1px solid #999; padding:6px;">
                         <div class="mb-3">
-                            <label class="form-label" for="state">State</label>
-                            <select class="form-select" style="width: 140px;" id="state" aria-label="State">
-                                <option value="Pick A State">Pick A State</option>
-                                <option value="Texas">Texas</option>
-                                <option value="New York">New York</option>
-                            </select>
+                            <label class="form-label" for="city">Last Name</label>
+                            <input class="form-control" size=60 id="city" type="text" placeholder="" data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="city:required">City is required.</div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="postalCode">Postal Code</label>
-                            <input class="form-control" id="postalCode" type="text" placeholder="Postal Code" data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="postalCode:required">Postal Code is required.</div>
+                    </fieldset>
+                    <fieldset class="mb-3" style="border:1px solid #999; padding:6px;">
+                        <div class="address d-flex justify-content-between">
+                            <div class="mb-3">
+                                <label class="form-label" for="state">State</label>
+                                <select class="form-select" style="width: 140px;" id="state" aria-label="State">
+                                    <option value="Pick A State">Pick A State</option>
+                                    <option value="Texas">Texas</option>
+                                    <option value="New York">New York</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="postalCode">Postal Code</label>
+                                <input class="form-control" id="postalCode" type="text" placeholder="" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="postalCode:required">Postal Code is required.</div>
+                            </div>
                         </div>
-                    </div>
+                    </fieldset>
                     <div class="mb-3">
                         <label class="form-label" for="message">Message</label>
-                        <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                        <textarea class="form-control" id="message" type="text" placeholder="" style="height: 10rem;" data-sb-validations="required"></textarea>
                         <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
-                    </div>
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            <p>To activate this form, sign up at</p>
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
                     </div>
                 </div>
             </div>
                 <div class="d-none" id="submitErrorMessage">
                     <div class="text-center text-danger mb-3">Error sending message!</div>
                 </div>
-                <div class="d-grid">
-                    <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-secondary btn-lg disabled" id="submitButton" type="submit">Cancel</button>
+                    <button class="btn btn-primary btn-lg disabled ms-2" id="submitButton" type="submit">Send</button>
                 </div>
         </form>
         
